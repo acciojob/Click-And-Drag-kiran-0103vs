@@ -1,6 +1,8 @@
 // Your code here.
 // script.js
 
+// script.js
+
 let isDragging = false;
 let startX;
 let scrollLeft;
@@ -15,13 +17,17 @@ container.addEventListener('mousedown', (e) => {
 });
 
 container.addEventListener('mouseleave', () => {
-  isDragging = false;
-  container.classList.remove('active');
+  if (isDragging) {
+    isDragging = false;
+    container.classList.remove('active');
+  }
 });
 
 container.addEventListener('mouseup', () => {
-  isDragging = false;
-  container.classList.remove('active');
+  if (isDragging) {
+    isDragging = false;
+    container.classList.remove('active');
+  }
 });
 
 container.addEventListener('mousemove', (e) => {
